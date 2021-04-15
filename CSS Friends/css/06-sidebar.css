@@ -1,1 +1,19 @@
 /* PHASE 0: Sidebar */
+
+.profile-picture {
+    display: block;
+    margin-top: -100px;
+    position: relative;
+}
+
+.profile-nav {
+
+}
+
+.profile-info > h1{
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
