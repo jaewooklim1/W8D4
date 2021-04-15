@@ -1,2 +1,62 @@
 /* PHASE 2: Thumbs */
 
+.friends-class {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.friends-class > li {
+    flex: 30%;
+    margin: 3px;
+}
+
+.thumb {
+    border-radius: 3px;
+    display: block;
+    position: relative;
+    width: 55px;
+    height: 55px;
+    border: 1px solid black;
+}
+
+.thumb:before {
+    content: "";
+    display: none;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    border-top: 5px solid black;
+    border-left: 5px solid transparent;
+    border-bottom: none;
+    border-right: 5px solid transparent;
+    z-index: 5;        
+    
+    top: -10px;
+    
+    /* padding: 6px 12px;
+    border-radius: 5px;
+    bottom: 50px; */
+     
+}
+
+.thumb:after {
+    content: attr(title);
+    display: none;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    top: -28px;
+    background: black;
+    color: white;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 5px;
+ 
+    
+    
+}
+
+.thumb:hover:before,
+.thumb:hover:after {
+    display: block;
+}
