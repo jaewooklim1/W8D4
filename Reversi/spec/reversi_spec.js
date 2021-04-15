@@ -65,6 +65,8 @@ describe("Board", function () {
         row.forEach(function (spot, j) {
           if ((i !== 3 && i !== 4) && (j !== 3 && j !== 4)) {
             expect(spot).toBeUndefined();
+          } else {
+            expect(spot).toBeTruthy();
           }
         });
       });
