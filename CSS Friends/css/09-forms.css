@@ -1,1 +1,24 @@
 /* PHASE 3: Forms */
+.form {
+    margin: 0 0 22px 0;
+    display: flex;
+    position: relative;
+}
+
+.form-thumb {
+    width: 50px;
+    position: absolute;
+}
+
+.form-fieldset {
+    margin: 0 0 0 22px;
+    padding: 15px;
+    width: 400px;
+    background-color: lightgray;
+    position: absolute;
+
+}
+
+.input {
+    margin: 5px;
+}
