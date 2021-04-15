@@ -182,12 +182,29 @@ Board.prototype.placePiece = function (pos, color) {
  * the Board for a given color.
  */
 Board.prototype.validMoves = function (color) {
+  const movesValid = [];
+
+  for (let i = 0; i < 8; i++) {
+    for (let j = 0; j < 8; j++) {
+      if (this.validMove([i,j],color)) {
+        movesValid.push([i,j]);
+      }
+      
+    }
+  }
+
+  return movesValid;
 };
 
 /**
  * Checks if there are any valid moves for the given color.
  */
 Board.prototype.hasMove = function (color) {
+  if (this.validMoves(color).length < 1) {
+    return false;
+  }
+
+  return true;
 };
 
 
@@ -197,6 +214,11 @@ Board.prototype.hasMove = function (color) {
  * the black player are out of moves.
  */
 Board.prototype.isOver = function () {
+  if (!this.hasMove("white") && !this.hasMove("black")) {
+    return true;
+  }
+
+  return false;
 };
 
 
@@ -206,6 +228,18 @@ Board.prototype.isOver = function () {
  * Prints a string representation of the Board to the console.
  */
 Board.prototype.print = function () {
+  console.log("|X||0|1|2|3|4|5|6|7|");
+  for (let i = 0; i < 8; i++) {
+    let row = "|" + i + "|";
+    for (let j = 0; j < 8; j++) {
+      let pos = [i,j];
+      row += ' ' + (this.getPiece(pos) ? this.getPiece(pos).toString() : '*' ); 
+    }
+    console.log(row);
+    // if (i < 7) {
+    //   console.log('________________________');
+    // }
+  }
 };
 
 
